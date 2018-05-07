@@ -1,0 +1,14 @@
+<h1>Your Profile</h1>
+
+<%= form_with model: @profile, url: profile_path do |f| %>
+    <p> 
+        <%= f.label :first_name%> <br>
+        <%= f.text_field :first_name %>
+    </p>
+    <p>
+        <%= f.label :last_name%> <br>
+        <%= f.text_field :last_name %>
+    </p>
+
+    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+<% end %>
