@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
             redirect_to root_path
         else
             flash[:alert] = 'Could not save profile'
-            redirect_back
+            redirect_back(fallback_location: root_path)
         end
 
     end
