@@ -3,8 +3,9 @@ class ProfilesController < ApplicationController
     def show
         # unless user is signed in, 'show' redirects to root page
         redirect_to :root unless user_signed_in?
-            # @profile = current_user.profile # what I thought it was (should work too)
-            @profile = Profile.find(current_user.id) # alternative way you can use
+        # @profile = current_user.profile # what I thought it was (should work too)
+        @profile = Profile.find(current_user.id) # alternative way you can use
+        @address = Address.find(current_user.id)
     end
 
     def edit

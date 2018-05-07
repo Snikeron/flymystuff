@@ -1,11 +1,11 @@
 class AddressesController < ApplicationController
 
-    def show
-        # unless user is signed in, 'show' redirects to root page
-        redirect_to :root unless user_signed_in?
-            # @address = current_user.address # what I thought it was (should work too)
-            @address = Address.find(current_user.id) # alternative way you can use
-    end
+    # def show
+    #     # unless user is signed in, 'show' redirects to root page
+    #     redirect_to :root unless user_signed_in?
+    #         # @address = current_user.address # what I thought it was (should work too)
+    #         @address = Address.find(current_user.id) # alternative way you can use
+    # end
 
     def edit
         # if current_user.address.exists?
@@ -43,10 +43,6 @@ class AddressesController < ApplicationController
             redirect_back
         end
 
-    end
-
-    def show_all
-        @address = Address.all
     end
 
     private

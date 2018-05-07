@@ -3,6 +3,12 @@
 <h5>Name:</h5>
 <%= @current_user.profile.full_name %>
 
+<h5>Address:</h5>
+<%= @address.full_address %>
+<p>
+    <%= button_to 'Edit Address', address_edit_path, method: :get, type: 'button' %>
+</p>
+
 <h5>Email Address:</h5>
 <%= @current_user.email %>
 
@@ -13,5 +19,7 @@
 <%= @current_user.profile.flyer_flytes %>
 
 <p>
-    <%= link_to 'Edit Profile', profile_edit_path, :class => 'btn btn-primary' %>
+    <%= button_to 'Edit Profile', profile_edit_path, method: :get, type: 'button' %>
 </p>
+
+
