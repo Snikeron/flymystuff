@@ -24,10 +24,10 @@ class ProfilesController < ApplicationController
 
         if @profile.save
             flash[:notice] = 'Profile created'
-            redirect_to root_path
+            redirect_to address_edit_path
         else
             flash[:alert] = 'Could not save profile'
-            redirect_back(fallback_location: root_path)
+            redirect_back
         end
 
     end

@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
 
     if user.profile.nil?
       profile_edit_path
+    elsif user.address.nil?
+      address_edit_path
     else
       pages_home_path
     end

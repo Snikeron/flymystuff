@@ -8,4 +8,10 @@ Rails.application.routes.draw do
   post '/profile', to: 'profiles#create'
   patch '/profile', to: 'profiles#update'
   get '/profile/all', to: 'profiles#show_all'
+
+  get '/address', to: 'addresses#show'
+  get '/address/edit', to: 'addresses#edit'
+  post '/address', to: 'addresses#create'
+  patch '/address', to: 'addresses#update'
+  get '/address/all', to: 'addresses#show_all'
 end

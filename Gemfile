@@ -8,6 +8,10 @@ end
 ## IMPORTED GEMS
 # Use Devise for user auth
 gem 'devise'
+# Use geocoder for GPS coords
+gem 'geocoder'
+# Use country_select for country listing
+gem 'country_select'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'

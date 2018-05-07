@@ -1,0 +1,26 @@
+<h1>Your Address</h1>
+
+<%= form_with model: @address, url: address_path do |f| %>
+    <p>
+        <%= f.label :street_address%> <br>
+        <%= f.text_field :street_address %>
+    </p>
+    <p>
+        <%= f.label :city%> <br>
+        <%= f.text_field :city %>
+    </p>
+    <p>
+        <%= f.label :postcode%> <br>
+        <%= f.text_field :postcode %>
+    </p>
+    <p>
+        <%= f.label :state%> <br>
+        <%= f.text_field :state %>
+    </p>
+    <p>
+        <%= f.label :country_code%> <br>
+        <%= f.country_select :country_code, priority_countries: ["AU", "US", "GB", "SG"], priority_countries_divider: "--------" %>
+    </p>
+
+    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+<% end %>
