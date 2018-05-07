@@ -5,7 +5,12 @@ class ProfilesController < ApplicationController
         redirect_to :root unless user_signed_in?
         # @profile = current_user.profile # what I thought it was (should work too)
         @profile = Profile.find(current_user.id) # alternative way you can use
-        @address = Address.find(current_user.id)
+
+        if Address.exists?(current_user.id)
+            @address = Address.find(current_user.id)
+        else
+
+        end
     end
 
     def edit

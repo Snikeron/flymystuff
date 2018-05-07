@@ -1,0 +1,17 @@
+<header id="head">
+    <h1>Flymystuff</h1>
+</header>
+<nav id="navBar">
+    <ul id="menu" class="">
+    <li><%= link_to 'Home', root_path %></li>
+    <% if user_signed_in? %>
+        <li><%= link_to 'Profile', profile_path %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+        <li><%= link_to 'Register', new_user_registration_path %></li>
+        <li><%= link_to 'Sign In', new_user_session_path %></li>
+    <% end %>
+    </ul>
+    <div id="menuToggle" class="handle">Menu</div>
+</nav>
+<div id="pushBack"></div>

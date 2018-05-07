@@ -9,20 +9,12 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <%= link_to 'Home', root_path %> |
-        <% if user_signed_in? %>
-          <%= link_to 'Profile', profile_path %> |
-          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to 'Register', new_user_registration_path %> |
-          <%= link_to 'Sign In', new_user_session_path %>
-        <% end %>
-      </nav>
-    </header>
+    <%= render 'partials/header' %>
+    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <section>
+      <%= yield %>
+    </section>
   </body>
 </html>
