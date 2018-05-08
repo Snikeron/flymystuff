@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   post '/address', to: 'addresses#create'
   patch '/address', to: 'addresses#update'
   get '/address/all', to: 'addresses#show_all'
+
+  resources :listings 
+  
 end

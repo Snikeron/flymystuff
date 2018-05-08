@@ -1,0 +1,11 @@
+<%= link_to 'New Listing', new_listing_path %>
+
+<% @listings.each do |listing| %>
+    <h1><%= listing.id %></h1>
+    <ul>
+        <li>Deliver to: <%= listing.shopper_city %></li>
+        <li>Buy from: <%= listing.flyer_city %></li>
+        <li>Item: <%= listing.item_description %></li>
+        <li>Price: <%= number_to_currency(listing.price / 100) %></li>
+    </ul>
+<% end %>

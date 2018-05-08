@@ -1,0 +1,16 @@
+<p>
+  <strong>Item Description:</strong><br />
+  <%= @listing.item_description %>
+</p>
+
+<p>
+  <strong>Purchase from:</strong>
+  <%= @listing.flyer_city %>
+</p>
+
+<p>
+  <strong>Deliver to:</strong>
+  <%= @listing.shopper_city %>
+</p>
+
+<%= link_to 'Back', listings_path %>
