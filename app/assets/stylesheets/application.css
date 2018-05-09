@@ -13,111 +13,210 @@
  *= require_tree .
  *= require_self
  */
- body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
-  
-  header {
-    background-color: #6c969d;
-    width: 100%;
-    padding: 40px 0;
-    color: #fafafa;
-    text-align: center;
-    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.1) inset;
-  }
-  
-  #navBar {
-    position: static;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
-  }
-  
-  #pushBack {
-    margin: 0;
-    padding: 0;
-    height: 0em;
-  }
-  
-  nav ul {
-    overflow: hidden;
-    background-color: #345863;
-    margin: 0;
-    padding: 0;
-    color: white;
-    text-align: center;
-    -webkit-transition: max-height 0.4s;
-    -ms-transition: max-height 0.4s;
-    -mos-transition: max-height 0.4s;
-    -o-transition: max-height 0.4s;
-    transition: max-height 0.4s;
-  }
-  
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f4f4f4;
+}
+
+main {
+  padding: 5rem 3rem;
+}
+
+a {
+  color: #000;
+  color: rgb(105,105,105);
+}
+
+/* header */
+
+.header {
+  background-color: #fafafa;
+  box-shadow: 0 2px 2px #2e393b;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* Mobile Navigation */
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: white;
+}
+
+nav ul li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+nav ul li a:hover,
+.header .menu-btn:hover {
+  color: rgb(61, 197, 223);
+}
+
+/* Submenu Dropdown */
+/* Hide Dropdown for Mobile Nav */
+nav ul ul {
+  display: none;
+}
+
+/* Display Dropdown on Hover */
+nav ul li:hover > ul {
+  display: inherit;
+}
+
+/* Indents Submenu List Items */
+nav ul li ul a {
+  padding: 14px 0;
+  text-indent: 40px;
+}
+
+nav ul li ul a:hover {
+  color: white;
+  background-color: rgb(61, 197, 223);
+}
+
+/* menu */
+
+nav ul {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ nav ul {
+  max-height: 480px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* Media Queries */
+/* 48em = 768px */
+
+@media (min-width: 48em) {
   nav li {
-    display: inline-block;
-    padding: 0 1%;
+    float: left;
+  }
+  nav ul li a {
+    padding: 20px 25px;
+  }
+  nav ul {
+    clear: none;
+    float: right;
+    max-height: none;
   }
   
-  nav a,
-  nav a:active {
-    display: block;
-    text-decoration: none;
-    width: 5em;
-    padding: 1em 0;
-    color: inherit;
-  }
+  /* Dropdown Menu */
   
-  nav a:hover {
-    background-color: #6c969d;
-  }
-  
-  nav .handle {
-    position: relative;
+  /* Hide Dropdowns by Default
+   * and giving it a position of absolute */
+  .dropdown {
     display: none;
-    width: 100%;
-    background-color: #005c48;
-    text-align: left;
-    box-sizing: border-box;
-    padding: 1em 2em;
-    color: #ddd;
-    cursor: pointer;
+    position: absolute;
   }
   
-  section {
-    postion: relative;
-    margin: 0 auto;
-    max-widht: 60em;
-    padding: 2em;
+  /* Display Dropdowns on Hover */
+  nav ul li:hover > ul.dropdown {
+    display: inherit;
   }
   
-  p {
-    font-size: 1em;
-    line-height: 1.5em;
+  /* Change Padding for Dropdown */
+  nav ul ul li a {
+    padding: 14px 20px;
+    text-indent: 0;
+  } 
+  
+  /* Dropdown "a link" hover style */
+  nav ul ul li a:hover {
+    color: white;
+    background: rgb(61, 197, 223);
+  }
+
+  /* Dropdown First Tier */
+  nav ul ul li {
+    min-width: 250px;
+    float: none;
+    display: list-item;
   }
   
-  @media only screen and (max-width: 580px) {
-    nav .handle {
-      display: block;
-    }
-    nav li {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 0;
-    }
-    nav a {
-      width: 100%;
-      text-align: left;
-      padding: 1em 2em;
-      box-sizing: border-box;
-    }
-    nav ul {
-      position: relative;
-      max-height: 0em;
-    }
-    nav ul.showing {
-      max-height: 20em;
-    }
+  /* Highlight Active Navigation Link  */
+  nav .active {
+    color: rgb(61, 197, 223)
   }
+  
+  /* Hides Mobile Dropdown Button */
+  .header .menu-icon {
+    display: none;
+  }
+}

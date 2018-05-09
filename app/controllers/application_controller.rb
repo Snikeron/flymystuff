@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     elsif user.address.nil?
       address_edit_path
     else
-      pages_home_path
+      root_path
     end
   end
   

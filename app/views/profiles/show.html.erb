@@ -1,4 +1,7 @@
 <h1>Your Profile</h1>
+<p>
+    <%= button_to 'Edit Profile', profile_edit_path, method: :get, type: 'button' %>
+</p>
 
 <h5>Email Address:</h5>
 <%= @current_user.email %>
@@ -9,10 +12,10 @@
 <h5>Address:</h5>
 <% unless @address.nil? %>
     <%= @address.full_address %>
-    <p><%= button_to 'Edit Address', address_edit_path, method: :get, type: 'button' %></p>
+    <%= button_to 'Change Address', address_edit_path, method: :get, type: 'button' %>
 <% else %>
     <p>No address given. Please add your address now.</p>
-    <p><%= button_to 'Edit Address', address_edit_path, method: :get, type: 'button' %></p>
+    <%= button_to 'Enter Address', address_edit_path, method: :get, type: 'button' %>
 <% end %>
 
     
@@ -24,8 +27,5 @@
 <h5>Flytes Delivered:</h5>
 <%= @current_user.profile.flyer_flytes %>
 
-<p>
-    <%= button_to 'Edit Profile', profile_edit_path, method: :get, type: 'button' %>
-</p>
 
 

@@ -1,18 +1,29 @@
-<header id="head">
-    <h1>Flymystuff</h1>
+<header class="header">
+  <!-- Logo Also the Home Button -->
+  <%= link_to 'Flymystuff', root_path, class: 'logo' %>
+  <!-- Hamberger Menu Button -->
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <!-- Navigation Menu -->
+    <nav class="nav">
+        <ul>
+            <li><a href="#about">About</a>
+                <ul class="dropdown">
+                    <li><a href="#ourpractice">Our Practice</a></li>
+                    <li><a href="#technology">Technology</a></li>
+                </ul>
+            </li>
+            <% if user_signed_in? %>
+            <!-- "About" Submenu -->
+            <li><%= link_to 'Listings', listings_path %></li>
+            <li><%= link_to 'Profile', profile_path %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>        
+            <!-- "Services" Submenu -->
+            <% else %>
+            <li><%= link_to 'Register', new_user_registration_path %></li>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+            <% end %>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 </header>
-<nav id="navBar">
-    <ul id="menu" class="">
-    <li><%= link_to 'Home', root_path %></li>
-    <% if user_signed_in? %>
-        <li><%= link_to 'Listings', listings_path %></li>
-        <li><%= link_to 'Profile', profile_path %></li>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-    <% else %>
-        <li><%= link_to 'Register', new_user_registration_path %></li>
-        <li><%= link_to 'Sign In', new_user_session_path %></li>
-    <% end %>
-    </ul>
-    <div id="menuToggle" class="handle">Menu</div>
-</nav>
-<div id="pushBack"></div>

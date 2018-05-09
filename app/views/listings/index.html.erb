@@ -7,5 +7,7 @@
         <li>Buy from: <%= listing.flyer_city %></li>
         <li>Item: <%= listing.item_description %></li>
         <li>Price: <%= number_to_currency(listing.price / 100) %></li>
+        <li>Posted by: <%= Listing.listing_created_by(listing.user_id) %></li>
     </ul>
+    <%= link_to 'Show Listing', listing %>
 <% end %>
