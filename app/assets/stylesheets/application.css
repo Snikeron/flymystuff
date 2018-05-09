@@ -27,7 +27,7 @@ body, html {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	background-color: #f4f4f4;
+	background-color: #f0f0e0;
 	font-family: 'Montserrat', sans-serif;
 }
 
@@ -78,7 +78,7 @@ a {
 	display: grid;
 	grid-gap: 30px;
 	/* Change minmax px or fr to change the card sizes	*/
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
 	grid-auto-rows: 150px;
 	grid-auto-flow: row dense;
   line-height: 20px;
@@ -355,7 +355,23 @@ min-height: 18px;
 
 /* NavMenu Media Queries */
 /* 48em = 768px */
-@media (min-width: 48em) {
+/* @media only screen 
+  and (min-device-width: 450px) 
+  and (max-device-width: 750px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    nav li {
+      float: left;
+    }
+    nav ul li a {
+      padding: 20px 25px;
+    }
+    nav ul {
+      clear: none;
+      float: right;
+      max-height: none;
+} */
+
+@media (min-width: 768px) {
   nav li {
     float: left;
   }
@@ -411,3 +427,5 @@ min-height: 18px;
     display: none;
   }
 }
+
+/* Forms */

@@ -1,7 +1,7 @@
 <header class="header">
   <!-- Logo Also the Home Button -->
     <%= link_to root_path, class: 'logo' do %>
-        <svg width="150" height="52" viewBox="0 0 261 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg width="60%" height="20.8%" viewBox="0 0 261 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Canvas" fill="none">
         <g id="Group">
         <g id="luggage">
@@ -90,7 +90,7 @@
         </g>
         </svg>
     <% end %>
-  <!-- Hamberger Menu Button -->
+  <!-- Hamburger Menu Button -->
   <input class="menu-btn" type="checkbox" id="menu-btn" />
   <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
   <!-- Navigation Menu -->
@@ -114,8 +114,8 @@
                 <% end %>
             <!-- "Services" Submenu -->
             <% else %>
-                <li><%= link_to 'Register', new_user_registration_path %></li>
                 <li><%= link_to 'Sign In', new_user_session_path %></li>
+                <li><%= link_to 'Register', new_user_registration_path %></li>
             <% end %>
         </ul>
     </nav>
