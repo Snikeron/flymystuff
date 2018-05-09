@@ -27,7 +27,7 @@ class AddressesController < ApplicationController
             redirect_to root_path
         else
             flash[:alert] = 'Could not save address'
-            redirect_back
+            redirect_back(fallback_location: root_path)
         end
 
     end
@@ -40,7 +40,7 @@ class AddressesController < ApplicationController
             redirect_to profile_path
         else
             flash[:alert] = 'Could not save address'
-            redirect_back
+            redirect_back(fallback_location: root_path)
         end
 
     end
