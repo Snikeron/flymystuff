@@ -27,6 +27,8 @@ class ProfilesController < ApplicationController
     def create
         @profile = Profile.new(profile_params)
         @profile.user = current_user
+        @profile.flyer_flytes = 0
+        @profile.shopper_flytes = 0
 
         if @profile.save
             flash[:notice] = 'Profile created'
