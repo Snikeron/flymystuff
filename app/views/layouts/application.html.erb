@@ -11,7 +11,7 @@
   <body>
     <%= render 'partials/header' %>
     
-    <main class="main">
+    <section class="section">
 
       <% if notice.present? %>
       <div class="notice message">
@@ -26,6 +26,6 @@
 
       <%= yield %>
 
-    </main>
+    </section>
   </body>
 </html>

@@ -1,7 +1,7 @@
 <header class="header">
   <!-- Logo Also the Home Button -->
-  <%= link_to root_path, class: 'logo' do %>
-    <svg width="150" height="52" viewBox="0 0 261 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <%= link_to root_path, class: 'logo' do %>
+        <svg width="150" height="52" viewBox="0 0 261 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Canvas" fill="none">
         <g id="Group">
         <g id="luggage">
@@ -88,8 +88,8 @@
         </g>
         </g>
         </g>
-    </svg>
-<% end %>
+        </svg>
+    <% end %>
   <!-- Hamberger Menu Button -->
   <input class="menu-btn" type="checkbox" id="menu-btn" />
   <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
@@ -98,8 +98,8 @@
         <ul>
             <li><a href="#about">About</a>
                 <ul class="dropdown">
-                    <li><a href="#ourpractice">Our Practice</a></li>
-                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#howitworks">How It Works</a></li>
+                    <li><a href="#contactus">Contact Us</a></li>
                 </ul>
             </li>
             <% if user_signed_in? %>
@@ -117,7 +117,6 @@
                 <li><%= link_to 'Register', new_user_registration_path %></li>
                 <li><%= link_to 'Sign In', new_user_session_path %></li>
             <% end %>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 </header>
