@@ -159,7 +159,6 @@ span.item-title {
 }
 
 .item--large {
-  grid-column;
 	grid-row-end: span 3;
 }
 

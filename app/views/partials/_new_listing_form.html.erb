@@ -13,22 +13,22 @@
 
   <div class="field">
     <%= form.label :shopper_city %><br />
-    <%= form.text_field :shopper_city, id: :listing_shopper_city %>
+    <%= form.text_field :shopper_city, id: :listing_shopper_city, required: true %>
   </div>
 
     <div class="field">
     <%= form.label :flyer_city %><br />
-    <%= form.text_field :flyer_city, id: :listing_flyer_city %>
+    <%= form.text_field :flyer_city, id: :listing_flyer_city, required: true %>
   </div>
 
     <div class="field">
     <%= form.label :item_description %><br />
-    <%= form.text_area :item_description, id: :listing_item_description %>
+    <%= form.text_area :item_description, rows: 4, id: :listing_item_description, required: true %>
   </div>
 
     <div class="field">
     <%= form.label :price %><br />
-    <%= form.number_field :price, id: :listing_price %>
+    <%= form.number_field :price, id: :listing_price, required: true %>
   </div>
 
   <div class="actions">
