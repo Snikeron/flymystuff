@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507053042) do
+ActiveRecord::Schema.define(version: 20180510011335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,20 @@ ActiveRecord::Schema.define(version: 20180507053042) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "responses", force: :cascade do |t|
+    t.bigint "request_user_id"
+    t.bigint "response_user_id"
+    t.date "flyer_city_start_date"
+    t.date "flyer_city_end_date"
+    t.date "shopper_city_arrival_date"
+    t.bigint "user_id"
+    t.bigint "listing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_responses_on_listing_id"
+    t.index ["user_id"], name: "index_responses_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -70,4 +84,6 @@ ActiveRecord::Schema.define(version: 20180507053042) do
   add_foreign_key "addresses", "users"
   add_foreign_key "listings", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "responses", "listings"
+  add_foreign_key "responses", "users"
 end
