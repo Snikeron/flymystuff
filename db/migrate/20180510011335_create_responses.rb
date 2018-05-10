@@ -1,7 +1,6 @@
 class CreateResponses < ActiveRecord::Migration[5.1]
   def change
     create_table :responses do |t|
-      t.bigint :request_user_id
       t.bigint :response_user_id
       t.date :flyer_city_start_date
       t.date :flyer_city_end_date

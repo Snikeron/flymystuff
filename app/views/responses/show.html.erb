@@ -1,0 +1,28 @@
+<p>
+  <strong>Response By:</strong><br />
+  <%= Profile.find(@response.user_id).first_name %>
+</p>
+
+<p>
+  <strong>For Listing: <%= @response.listing_id %></strong>
+  <%= Listing.find(@response.listing_id).item_description%>
+</p>
+
+<p>
+  <strong>In City From:</strong>
+  <%= @response.flyer_city_start_date %>
+</p>
+
+<p>
+  <strong>In City To:</strong>
+  <%= @response.flyer_city_end_date %>
+</p>
+
+<p>
+  <strong>Arriving in Your City:</strong>
+  <%= @response.shopper_city_arrival_date %>
+</p>
+
+<%= link_to 'Accept', root_path %>
+
+<%= link_to 'Back', responses_path %>

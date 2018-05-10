@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 20180510011335) do
   end
 
   create_table "responses", force: :cascade do |t|
-    t.bigint "request_user_id"
     t.bigint "response_user_id"
     t.date "flyer_city_start_date"
     t.date "flyer_city_end_date"

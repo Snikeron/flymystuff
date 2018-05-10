@@ -1,0 +1,32 @@
+<%= form_with(url: listing_responses_path, scope: :response) do |form| %>
+  <% if response.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(response.errors.count, "error") %> prohibited this response from being saved:</h2>
+
+      <ul>
+      <% response.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :flyer_city_start_date %><br />
+    <%= form.date_field :flyer_city_start_date, id: :response_flyer_city_start_date, required: true %>
+  </div>
+
+    <div class="field">
+    <%= form.label :flyer_city_end_date %><br />
+    <%= form.date_field :flyer_city_end_date, id: :response_flyer_city_end_date, required: true %>
+  </div>
+
+    <div class="field">
+    <%= form.label :shopper_city_arrival_date %><br />
+    <%= form.date_field :shopper_city_arrival_date, rows: 4, id: :response_shopper_city_arrival_date, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   patch '/address', to: 'addresses#update'
   get '/address/all', to: 'addresses#show_all'
 
-  resources :listings 
+  resources :responses
+  
+  resources :listings, shallow: true do 
+    resources :responses
+  end
   
 end

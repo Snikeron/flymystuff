@@ -23,4 +23,6 @@
   <%= Listing.listing_created_by(@listing.user_id) %>
 </p>
 
+<%= link_to 'Respond to Listing', new_listing_response_path(@listing) %>
+
 <%= link_to 'Back', listings_path %>

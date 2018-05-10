@@ -1,0 +1,19 @@
+<h1>Received Responses:</h1>
+<% @received_responses.each do |response| %>
+    <h1><%= response.id %></h1>
+    <ul>
+        <li><strong>Listing for</strong>: <%= Listing.find(response.listing_id).item_description %>
+        <li><strong>Responded by</strong>: <%= Profile.find(response.user_id).full_name %></li>
+        <li>Will be in <strong><%= Listing.find(response.listing_id).flyer_city %></strong> from <strong><%= response.flyer_city_start_date %></strong> to <strong><%= response.flyer_city_end_date %></strong> </li>
+    </ul>
+<% end %>
+
+<h1>Sent Responses:</h1>
+<% @sent_responses.each do |response| %>
+    <h1><%= response.id %></h1>
+    <ul>
+        <li><strong>Sent to</strong>: <%= Profile.find(response.user_id).full_name %></li>
+        <li><strong>Item</strong>: <%= Listing.find(response.listing_id).item_description %></li>
+        <li><strong>Location</strong>: <%= Listing.find(response.listing_id).flyer_city %></li>
+    </ul>
+<% end %>

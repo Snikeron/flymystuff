@@ -106,6 +106,7 @@
             <!-- "About" Submenu -->
                 <% unless current_user.profile.nil? %>
                     <li><%= link_to 'Listings', listings_path %></li>
+                    <li><%= link_to 'Responses', responses_path %></li>
                     <li><%= link_to 'Profile', profile_path %></li>
                     <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>   
                 <% else %>
