@@ -21,6 +21,10 @@ Rails.application.routes.draw do
     resources :responses
   end
   
-  resources :flytes
+  resources :flytes do
+    member do
+      post 'charge'
+    end
+  end
   
 end

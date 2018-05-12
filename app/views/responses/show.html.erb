@@ -22,5 +22,8 @@
   <strong>Arriving in Your City:</strong>
   <%= @response.shopper_city_arrival_date %>
 </p>
+<p>
+  <%= link_to 'Accept Offer', new_flyte_path(listing_id: response.listing_id) %>
+</p>
 
 <%= link_to 'Back', responses_path %>

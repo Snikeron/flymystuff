@@ -1,40 +1,59 @@
-<h1>New Flyte</h1>
+<h1>Confirm Flyte</h1>
 
-<%= form_with(model: flyte, local: true) do |form| %>
-  <% if flyte.errors.any? %>
+<%= form_for @flyte, html: { class: "basic-grey" } do |f| %>
+  <% if @flyte.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(flyte.errors.count, "error") %> prohibited this flyte from being saved:</h2>
+      <h2>
+        <%= pluralize(@flyte.errors.count, "error") %>
+        prohibited this flyte from being saved:
+      </h2>
       <ul>
-      <% flyte.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @flyte.errors.full_messages.each do |message| %>
+          <li>
+            <%= message %>
+          </li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= form.label :shopper_city %><br />
-    <%= form.text_field :shopper_city, id: :flyte_shopper_city, required: true %>
+    <%= f.hidden_field :user_id, value: @listing.user_id %>
   </div>
-
-    <div class="field">
-    <%= form.label :flyer_city %><br />
-    <%= form.text_field :flyer_city, id: :flyte_flyer_city, required: true %>
+  <div class="field">
+    <%= f.hidden_field :listing_id, value: @listing.id %>
   </div>
-
-    <div class="field">
-    <%= form.label :item_description %><br />
-    <%= form.text_area :item_description, rows: 4, id: :flyte_item_description, required: true %>
+  <div class="field">
+    <%= f.hidden_field :flyer_id, value: @response.user_id %>
   </div>
-
-    <div class="field">
-    <%= form.label :price %><br />
-    <%= form.number_field :price, id: :flyte_price, required: true %>
+  <div class="field">
+    <%= f.hidden_field :flyer_depart, value: @response.flyer_city_end_date %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field">
+    <%= f.hidden_field :flyer_arrive, value: @response.shopper_city_arrival_date %>
   </div>
+  <div class="field">
+    <%= f.hidden_field :deposit_amount, value: @listing.price %>
+  </div> 
+  <div>
+    <p>
+        <strong>Item:</strong> <%= @listing.item_description %>
+    </p>    
+    <p>
+        <strong>From:</strong> <%= @listing.flyer_city %>
+    </p> 
+    <p>
+        <strong>To:</strong> <%= @listing.shopper_city %>
+    </p>    
+  </div>
+  <div>
+  <% if user_signed_in? %>
+    <%= render 'partials/charge_form', flyte: @flyte, response: @response, listing: @listing, user: current_user %>
+  <% else %>
+    <%= link_to new_user_session_path, id: 'customButton', class: 'stripe-button-el' do %>
+      <span style="display: block; min-height: 30px;">Pay Now</span>
+    <% end %>
+  <% end %>
+</div>
 <% end %>
 
 <%= link_to 'Back', flytes_path %>

@@ -9,6 +9,8 @@ class ResponsesController < ApplicationController
 
     def new
         @response = Response.new
+        @listing = Listing.find_by(id: params[:listing_id])
+        @flyer = Response.find_by(listing_id: params[:response_id])
     end
 
     def show
