@@ -6,8 +6,8 @@ class FlytesController < ApplicationController
         
     end
 
-    def index
-        @flytes = Flyte.all
+    def show
+        @flyte= Flyte.find(params[:id])
     end
 
     def create
@@ -55,7 +55,7 @@ class FlytesController < ApplicationController
     private
     # Never trust parameters from the scary internet, only allow the white list through.
     def flyte_params
-        params.require(:flyte).permit(:listing_id, :deposit_amount, :flyer_depart, :flyer_arrive, :handover_method, :item_received, :item_enroute, :item_arrived, :item_image_data, :item_delivered, :payment_amount)
+        params.require(:flyte).permit(:listing_id, :deposit_amount, :flyer_depart, :flyer_arrive, :handover_method, :item_received, :item_enroute, :item_arrived, :item_image_data, :item_delivered, :payment_amount, :flyer_id)
     end
 
 end

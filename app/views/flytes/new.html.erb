@@ -1,6 +1,6 @@
 <h1>Confirm Flyte</h1>
 
-<%= form_for @flyte, html: { class: "basic-grey" } do |f| %>
+<%= form_for @flyte,remote: true, html: { class: "basic-grey" } do |f| %>
   <% if @flyte.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -33,6 +33,9 @@
   </div>
   <div class="field">
     <%= f.hidden_field :deposit_amount, value: @listing.price %>
+  </div> 
+  <div class="field">
+    <%= f.hidden_field :authenticity_token, form_authenticity_token %>
   </div> 
   <div>
     <p>

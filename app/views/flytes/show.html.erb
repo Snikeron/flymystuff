@@ -1,0 +1,28 @@
+<p>
+  <strong>Item:</strong><br />
+  <%= Listing.find(@flyte.listing_id).item_description %>
+</p>
+
+<p>
+  <strong>Payment:</strong>
+  $ <%= @flyte.deposit_amount / 100 %>
+</p>
+
+<p>
+  <strong>Flyer:</strong>
+  <%= Profile.find_by(user_id: @flyte.flyer_id).full_name %>
+</p>
+
+<p>
+  <strong>In <%= Listing.find(@flyte.listing_id).flyer_city %> from:</strong>
+  from: <%= Response.find_by(user_id: @flyte.flyer_id).flyer_city_start_date %>
+  to: <%= Response.find_by(user_id: @flyte.flyer_id).flyer_city_end_date %>
+</p>
+
+<p>
+  <strong>Arriving to <%= Listing.find(@flyte.listing_id).shopper_city %>:</strong>
+  <%= @flyte.flyer_arrive %>
+</p>
+
+
+<%= link_to 'Back', responses_path %>

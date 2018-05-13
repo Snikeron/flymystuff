@@ -23,7 +23,9 @@
   <%= @response.shopper_city_arrival_date %>
 </p>
 <p>
-  <%= link_to 'Accept Offer', new_flyte_path(listing_id: response.listing_id) %>
+  <% unless current_user.id == @response.user_id%>
+    <%= link_to 'Accept Offer', new_flyte_path(listing_id: @response.listing_id) %>
+  <% end %>
 </p>
 
 <%= link_to 'Back', responses_path %>
