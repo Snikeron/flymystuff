@@ -37,9 +37,6 @@ Rails.application.configure do
     }
   }
   
-  # Mailgun
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {domain: 'sandbox48e5bb3976d5480cb90eb5aaec13ddac.mailgun.org'}
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

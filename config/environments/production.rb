@@ -41,10 +41,7 @@ Rails.application.configure do
     }
   }
   
-    # Mailgun
-    config.action_mailer.delivery_method = :mailgun
-    config.action_mailer.mailgun_settings = {domain: 'sandbox48e5bb3976d5480cb90eb5aaec13ddac.mailgun.org'}
-  
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
