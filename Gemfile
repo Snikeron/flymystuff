@@ -14,6 +14,10 @@ gem 'devise'
 gem 'geocoder'
 # Use country_select for country listing
 gem 'country_select'
+# Use paperclip for file uploading
+gem 'paperclip'
+# Use aws-sdk for S3 access
+gem 'aws-sdk', '~> 2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
