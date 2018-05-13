@@ -1,4 +1,4 @@
-<%= link_to 'New Listing', new_listing_path %>
+<%= button_to 'New Listing', new_listing_path, method: :get, type: 'button' %>
 
 <% @listings.each do |listing| %>
     <h1><%= listing.id %></h1>

@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-
+    
     def show
         # unless user is signed in, 'show' redirects to root page
         redirect_to :root unless user_signed_in?

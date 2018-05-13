@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_one :address
   has_many :listings
   has_many :responses
+  has_many :flytes
+  
 end

@@ -6,7 +6,7 @@
         <li><strong>Responded by</strong>: <%= Profile.find(response.user_id).full_name %></li>
         <li>Will be in <strong><%= Listing.find(response.listing_id).flyer_city %></strong> from <strong><%= response.flyer_city_start_date %></strong> to <strong><%= response.flyer_city_end_date %></strong> </li>
     </ul>
-    <%= button_to 'Accept', root_path, method: :get, type: 'button' %>
+    <%= button_to 'Accept Offer', new_flyte_path, method: :get, type: 'button' %>
 <% end %>
 
 <h1>Sent Responses:</h1>

@@ -21,4 +21,6 @@ Rails.application.routes.draw do
     resources :responses
   end
   
+  resources :flytes
+  
 end
