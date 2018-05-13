@@ -1,5 +1,5 @@
 # FlyMyStuff Rails Project
-flymystuff.herokuapp.com
+[flymystuff.herokuapp.com](flymystuff.herokuapp.com)
 ## Introduction
 FlyMyStuff is a global network connecting international Shoppers with Flyers who have baggage space to spare.
 
@@ -21,6 +21,10 @@ Flymystuff offers a way for these **Shoppers** to connect with **Flyers** who wi
 My inspiration for FlyMyStuff stems from my experience as a migrant from Singapore
 
 ## Technologies
+* **Database:** PostgreSQL
+* **Version Control:** Git
+* **Deployment:** Heroku
+* **File Storage:** AWS S3
 * **Development Framework:** Ruby on Rails
     * Rspec (testing)
     * Devise (user authentication)
@@ -28,10 +32,6 @@ My inspiration for FlyMyStuff stems from my experience as a migrant from Singapo
     * Paperclip (file processing)
     * ImageMagick (image processing)
     * Stripe (payment processing)
-* **Database:** PostgreSQL
-* **Version Control:** Git
-* **Deployment:** Heroku
-* **File Storage:** AWS S3
 ### Additional Tools
 * Kanban Board (User Stories) Tracking - [Trello](https://trello.com/) 
 * Task Timing - [PomoDoneApp](pomodoneapp.com)
