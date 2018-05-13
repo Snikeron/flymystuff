@@ -105,6 +105,7 @@
             <% if user_signed_in? %>
             <!-- "About" Submenu -->
                 <% unless current_user.profile.nil? %>
+                    <li><%= link_to 'Flytes', flytes_path %></li>
                     <li><%= link_to 'Listings', listings_path %></li>
                     <li><%= link_to 'Responses', responses_path %></li>
                     <li><%= link_to 'Profile', profile_path %></li>

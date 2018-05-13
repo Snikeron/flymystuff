@@ -10,6 +10,11 @@ class FlytesController < ApplicationController
         @flyte= Flyte.find(params[:id])
     end
 
+    def index
+        @shopper_flytes = Flyte.where(user_id: current_user.id)
+        @flyer_flytes = Flyte.where(flyer_id: current_user.id)
+    end 
+
     def create
         @flyte = Flyte.new(flyte_params)
         @flyte.user = current_user

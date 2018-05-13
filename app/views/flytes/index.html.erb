@@ -1,0 +1,21 @@
+<h1>Your Shopping Flytes:</h1>
+<% @shopper_flytes.each do |shopper_flyte| %>
+    <h1><%= shopper_flyte.id %></h1>
+    <ul>
+        <li><strong>Item</strong>: <%= Listing.find(shopper_flyte.listing_id).item_description %>
+        <li><strong>Responded by</strong>: <%= Profile.find_by(user_id: shopper_flyte.flyer_id).full_name %></li>
+        <li>Will be in <strong><%= Listing.find(shopper_flyte.listing_id).shopper_city %></strong> on <strong><%= shopper_flyte.flyer_arrive %></strong> </li>
+        <li><strong>Deposit paid:</strong> <%= number_to_currency(shopper_flyte.deposit_amount / 100) %></li>
+    </ul>
+<% end %>
+
+<h1>Your Delivery Flytes:</h1>
+<% @flyer_flytes.each do |flyer_flyte| %>
+    <h1><%= flyer_flyte.id %></h1>
+    <ul>
+        <li><strong>Item</strong>: <%= Listing.find(flyer_flyte.listing_id).item_description %>
+        <li><strong>Delivery for</strong>: <%= Profile.find_by(user_id: flyer_flyte.user_id).full_name %></li>
+        <li>Expects arrival of item at <strong><%= Listing.find(flyer_flyte.listing_id).shopper_city %></strong> on <strong><%= flyer_flyte.flyer_arrive %></strong> </li>
+        <li><strong>Payment on Delivery:</strong> <%= number_to_currency(flyer_flyte.deposit_amount / 100) %></li>
+    </ul>
+<% end %>

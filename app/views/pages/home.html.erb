@@ -1,29 +1,40 @@
-<h1>FlymyStuff</h1>
-
 <% if user_signed_in? && current_user.profile.present? %>
-    Welcome, <%= current_user.profile.first_name %> !
+    <h1>
+        Welcome, <%= current_user.profile.first_name %> !
+    </h1>
 <% elsif user_signed_in? %>
     Please create your Profile.
 <% else %>
-    Welcome to Flymystuff!
+    <h1>
+        Welcome to Flymystuff!
+    </h1>
 <% end %>
 
 <div class="grid">
+    <%= link_to new_listing_path, class: "item shop item--large" do %>
     <div class="item item--large">
-        <span class="item-title">Shopper</span>
+        <span class="item-title">Fly My Stuff</span>
         <div class="item__details">
-          Make a purchase from abroad.
+          Post a Flyte request for an overseas purchase
         </div>
     </div>
+    <% end %>
+
+    <%= link_to listings_path, class: "item flight item--large" do %>
     <div class="item item--large">
-        <span class="item-title">Flyer</span>
+        <span class="item-title">Fly Someone's Stuff</span>
         <div class="item__details">
-          Fly someone's item.
+          Find a Flyte request that suits your travels
         </div>
     </div>
+    <% end %>
+
+    <%= link_to new_listing_path, class: "item about item--full" do %>
     <div class="item item--full">
+        <span class="item-title">Find out more ...</span>
         <div class="item__details">
             How does Flymystuff work?
         </div>
     </div>
+    <% end %>
 </div>
