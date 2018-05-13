@@ -3,7 +3,7 @@
 ## Introduction
 FlyMyStuff is a global network connecting international Shoppers with Flyers who have baggage space to spare.
 
-Quite often, people who have travelled overseas and returned, find themselves craving for more of a favourite item or items that they have bought at a store but have been unable to find online stores that can ship the item over to them, or the postage costs outweight the benefits, or the postage takes far too long to reach them and could be lost. 
+Quite often, people who have travelled overseas and returned, find themselves craving for more of a favourite item or items that they have bought at a store but have been unable to find online stores that can ship the item over to them, or perhaps the postage costs outweigh the benefits, or the postage takes far too long to reach them and could be lost. 
 
 Flymystuff offers a way for these **Shoppers** to connect with **Flyers** who will be travelling to their place of interest and returning to the **Shopper's** location. 
 
@@ -17,8 +17,10 @@ Flymystuff offers a way for these **Shoppers** to connect with **Flyers** who wi
 4. The **Flyer** and **Shopper** then agree on how the item is to be handed over once the **Flyer** is in town (Postage / Pickup).
 5. Once the item has exchanged hands and the **Shopper** is satisfied, the **Shopper** marks the *Flyte* as complete, and the **Flyer** automatically gets paid.
 
-## Planning
-My inspiration for FlyMyStuff stems from my experience as a migrant from Singapore
+## Problem
+My inspiration for FlyMyStuff stems from my experience as a migrant from Singapore, where upon moving to a foreign country like Australia, one realises that there are certain items such as food, clothing, accessories or appliances that are either hard to find or unavailable for purchase locally. 
+
+While online shopping has no doubt played a pivotal role in connecting buyers to the global marketplaces, high postage/shipping prices and ever-increasing tax rulings constitute high barriers of entry to these buyers. Furthermore, shoppers may often find themselves seeking an item specific to the country from which they had experienced it, perhaps during a vacation or as a resident there, such as
 
 ## Technologies
 * **Database:** PostgreSQL

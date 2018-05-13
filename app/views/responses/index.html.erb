@@ -34,7 +34,7 @@
             </span>
         </span>
         <span class="card-summary">
-        Responded to: <h4><%= Profile.find(response.user_id).full_name %></h4>
+        Responded to: <h4><%= Profile.find(response.response_user_id).full_name %></h4>
         Item:
             <h4><%= Listing.find(response.listing_id).item_description %></h4>       
         <span class="card-meta">
