@@ -2,7 +2,7 @@
 <%= button_to 'New Listing', new_listing_path, method: :get, type: 'button', class: 'myButton' %>
 
 <div class="cards">
-<% @listings.each do |listing| %>
+<% @listings.reverse_each do |listing| %>
       
     <%= link_to listing, class: "card" do %>
         <span class="card-header" style="background-image: url(<%= listing.item_photo.url(:medium) %>)">

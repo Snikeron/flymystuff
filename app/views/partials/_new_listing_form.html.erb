@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :shopper_city %><br />
+    <strong><%= form.label :shopper_city, 'Where are you based?' %></strong><br />
     <%= form.text_field :shopper_city, id: :listing_shopper_city, required: true %>
   </div>
 
     <div class="field">
-    <%= form.label :flyer_city %><br />
+    <strong><%= form.label :flyer_city, 'Where would you like to purchase from?' %></strong><br />
     <%= form.text_field :flyer_city, id: :listing_flyer_city, required: true %>
   </div>
 
     <div class="field">
-    <%= form.label :item_description %><br />
+    <strong><%= form.label :item_description %></strong><br />
     <%= form.text_area :item_description, rows: 4, id: :listing_item_description, required: true %>
   </div>
 
     <div class="field">
-    <%= form.label :item_photo %><br />
+    <strong><%= form.label :item_photo %></strong><br />
     <%= form.file_field :item_photo, required: true %>
   </div>
 
     <div class="field">
-    <%= form.label :price %><br />
+    <strong><%= form.label :price, 'Price you are willing to pay:' %></strong><br />
     <%= form.number_field :price, id: :listing_price, required: true %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit', class: 'myButton-left' %>
   </div>
 <% end %>

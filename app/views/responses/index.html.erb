@@ -1,6 +1,6 @@
 <h1>Received Responses:</h1>
 <div class="cards">
-<% @received_responses.each do |response| %>
+<% @received_responses.reverse_each do |response| %>
       
     <%= link_to new_flyte_path(listing_id: response.listing_id), class: "card" do %>
         <span class="card-header" style="background-image: url(<%= Profile.find(response.user_id).avatar.url(:square) %>)">
@@ -10,10 +10,8 @@
         </span>
         <span class="card-summary">
         Will be in: <h4><%= Listing.find(response.listing_id).flyer_city %></h4>
-        From:
-            <h4><%= response.flyer_city_start_date %></h4>
-        To:
-            <h4><%= response.flyer_city_end_date %></h4>
+            <%= response.flyer_city_start_date.strftime("%b %dth") %> -
+            <%= response.flyer_city_end_date.strftime("%b %dth %Y") %>
         </span>
         
         <span class="card-meta">
@@ -27,7 +25,7 @@
 
 <h1>Sent Responses:</h1>
 <div class="cards">
-<% @sent_responses.each do |response| %>
+<% @sent_responses.reverse_each do |response| %>
       
     <%= link_to Listing.find(response.listing_id), class: "card" do %>
         <span class="card-header" style="background-image: url(<%= Listing.find(response.listing_id).item_photo.url(:square) %>)">

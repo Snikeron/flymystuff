@@ -46,6 +46,9 @@ section {
 .flash {
   padding: 2rem;
 }
+.field {
+  margin: 2rem;
+}
 @media screen and (min-width: 768px) {
 	.section {
 		padding: 4rem;

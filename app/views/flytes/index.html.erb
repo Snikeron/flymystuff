@@ -1,6 +1,6 @@
 <h1>Your Shopping Flytes:</h1>
 <div class="cards">
-<% @shopper_flytes.each do |shopper_flyte| %>
+<% @shopper_flytes.reverse_each do |shopper_flyte| %>
     <div class="card">
     <span class="card-header" style="background-image: url(<%= Listing.find(shopper_flyte.listing_id).item_photo.url(:medium) %>)">
         <span class="card-title">
@@ -23,7 +23,7 @@
 
 <h1>Your Delivery Flytes:</h1>
 <div class="cards">
-<% @flyer_flytes.each do |flyer_flyte| %>
+<% @flyer_flytes.reverse_each do |flyer_flyte| %>
     <div class= "card">
     <span class="card-header" style="background-image: url(<%= Listing.find(flyer_flyte.listing_id).item_photo.url(:medium) %>)">
         <span class="card-title">
