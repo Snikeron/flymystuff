@@ -1,20 +1,47 @@
 <h1>Received Responses:</h1>
+<div class="cards">
 <% @received_responses.each do |response| %>
-    <h1><%= response.id %></h1>
-    <ul>
-        <li><strong>Listing for</strong>: <%= Listing.find(response.listing_id).item_description %>
-        <li><strong>Responded by</strong>: <%= Profile.find(response.user_id).full_name %></li>
-        <li>Will be in <strong><%= Listing.find(response.listing_id).flyer_city %></strong> from <strong><%= response.flyer_city_start_date %></strong> to <strong><%= response.flyer_city_end_date %></strong> </li>
-    </ul>
-    <%= link_to 'Accept Offer', new_flyte_path(listing_id: response.listing_id) %>
+      
+    <%= link_to new_flyte_path(listing_id: response.listing_id), class: "card" do %>
+        <span class="card-header" style="background-image: url(<%= Profile.find(response.user_id).avatar.url(:square) %>)">
+            <span class="card-title">
+                <h3><%= Listing.find(response.listing_id).item_description %></h3>
+            </span>
+        </span>
+        <span class="card-summary">
+        Will be in: <h4><%= Listing.find(response.listing_id).flyer_city %></h4>
+        From:
+            <h4><%= response.flyer_city_start_date %></h4>
+        To:
+            <h4><%= response.flyer_city_end_date %></h4>
+        </span>
+        
+        <span class="card-meta">
+            Responded: <%= response.updated_at.strftime("%b %dth %Y") %>
+        </span>
+    <% end %>
 <% end %>
+</div>
+
+
 
 <h1>Sent Responses:</h1>
+<div class="cards">
 <% @sent_responses.each do |response| %>
-    <h1><%= response.id %></h1>
-    <ul>
-        <li><strong>Sent to</strong>: <%= Profile.find(response.user_id).full_name %></li>
-        <li><strong>Item</strong>: <%= Listing.find(response.listing_id).item_description %></li>
-        <li><strong>Location</strong>: <%= Listing.find(response.listing_id).flyer_city %></li>
-    </ul>
+      
+    <%= link_to Listing.find(response.listing_id), class: "card" do %>
+        <span class="card-header" style="background-image: url(<%= Listing.find(response.listing_id).item_photo.url(:square) %>)">
+            <span class="card-title">
+                <h3><%= Listing.find(response.listing_id).flyer_city %></li></h3>
+            </span>
+        </span>
+        <span class="card-summary">
+        Responded to: <h4><%= Profile.find(response.user_id).full_name %></h4>
+        Item:
+            <h4><%= Listing.find(response.listing_id).item_description %></h4>       
+        <span class="card-meta">
+            Posted: <%= response.updated_at.strftime("%b %dth %Y") %>
+        </span>
+    <% end %>
 <% end %>
+</div>

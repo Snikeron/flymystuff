@@ -1,4 +1,6 @@
 class FlytesController < ApplicationController
+    skip_before_action :verify_authenticity_token 
+    
     def new
         @flyte = Flyte.new
         @response = Response.find_by(listing_id: Listing.find(params[:listing_id]))

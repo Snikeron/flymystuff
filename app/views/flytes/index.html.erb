@@ -1,6 +1,7 @@
 <h1>Your Shopping Flytes:</h1>
 <div class="cards">
 <% @shopper_flytes.each do |shopper_flyte| %>
+    <div class="card">
     <span class="card-header" style="background-image: url(<%= Listing.find(shopper_flyte.listing_id).item_photo.url(:medium) %>)">
         <span class="card-title">
             <h3><%= Listing.find(shopper_flyte.listing_id).flyer_city %></h3>
@@ -17,6 +18,7 @@
             Deposit Paid: <%= number_to_currency(shopper_flyte.deposit_amount / 100) %>
         </span>       
 <% end %>
+    </div>
 </div>
 
 <h1>Your Delivery Flytes:</h1>
@@ -31,7 +33,7 @@
     <span class="card-summary">
         Delivery to:
         <h4><%= Listing.find(flyer_flyte.listing_id).shopper_city %></h4>
-        Arriving in your city:
+        Expected arrival:
         <h4><%= flyer_flyte.flyer_arrive.strftime("%b %dth %Y") %></h4>
         </span>
         
