@@ -63,7 +63,8 @@ class ProfilesController < ApplicationController
             :first_name,
             :last_name,
             :shopper_flytes,
-            :flyer_flytes
+            :flyer_flytes,
+            :avatar
         ])
     end
 

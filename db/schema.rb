@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180510011335) do
+ActiveRecord::Schema.define(version: 20180513163845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,26 @@ ActiveRecord::Schema.define(version: 20180510011335) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "flytes", force: :cascade do |t|
+    t.integer "flyer_id"
+    t.bigint "listing_id"
+    t.decimal "deposit_amount"
+    t.date "flyer_depart"
+    t.date "flyer_arrive"
+    t.string "handover_method"
+    t.datetime "item_received"
+    t.datetime "item_enroute"
+    t.datetime "item_arrived"
+    t.text "item_image_data"
+    t.datetime "item_delivered"
+    t.decimal "payment_amount"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_flytes_on_listing_id"
+    t.index ["user_id"], name: "index_flytes_on_user_id"
   end
 
   create_table "listings", force: :cascade do |t|
@@ -47,6 +67,10 @@ ActiveRecord::Schema.define(version: 20180510011335) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -81,6 +105,8 @@ ActiveRecord::Schema.define(version: 20180510011335) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "flytes", "listings"
+  add_foreign_key "flytes", "users"
   add_foreign_key "listings", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "responses", "listings"

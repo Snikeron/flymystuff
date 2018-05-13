@@ -17,7 +17,7 @@ gem 'country_select'
 # Use paperclip for file uploading
 gem 'paperclip'
 # Use aws-sdk for S3 access
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk', '~> 3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
@@ -53,7 +53,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
-  gem 'dotenv', '~> 2.3'
+  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 end
 
 group :development do
