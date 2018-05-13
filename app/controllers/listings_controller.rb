@@ -6,6 +6,10 @@ class ListingsController < ApplicationController
         @listings = Listing.all
     end
 
+    def user_index
+        @listings = Listing.where(user_id: current_user.id)
+    end
+
     def show
     end
 
@@ -29,6 +33,8 @@ class ListingsController < ApplicationController
     end
 
     def edit
+        @listing = Listing.find_or_initialize_by(user: current_user)
+        @listing.user = current_user
     end
 
     def update
@@ -59,6 +65,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:shopper_city, :flyer_city, :item_description, :price)
+      params.require(:listing).permit(:shopper_city, :flyer_city, :item_description, :price, :item_photo)
     end
 end

@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     resources :responses
   end
   
+  get '/listings_user/', to: 'listings#user_index'
+  
   resources :flytes do
     member do
       post 'charge'
