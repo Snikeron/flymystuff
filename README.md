@@ -1,5 +1,6 @@
 # FlyMyStuff Rails Project
 [flymystuff.herokuapp.com](flymystuff.herokuapp.com)
+![flymystuff landing page](/docs/img/flymystuff.png)
 ## Introduction
 Flymystuff is a global network connecting international Shoppers with Flyers who have baggage space to spare.
 
