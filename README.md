@@ -56,7 +56,7 @@ The **Shopper** and **Flyer** then agree on a suitable location, date and time f
 * Wireframing/UI - [Figma](figma.com)
     * iOS Frame - [iOS Design Kit](https://iosdesignkit.io/ios-11-gui/)
 ### User Stories, User Journey
-![Trello Board](docs/img/Trello.png)
+![Trello Board](docs/img/trello.png)
 
 I followed some principles outlined in a Screenful blog post "[Tracking user stories with Trello](https://screenful.com/blog/tracking-user-stories-with-trello)", as I wanted to design features from the perspective and needs of end-users.
 User Journeys were mapped out using [draw.io](https://www.draw.io). I initially created an overall diagram depicting the macro-level of how a transaction would occur between a "Shopper" user and a "Flyer" user.
